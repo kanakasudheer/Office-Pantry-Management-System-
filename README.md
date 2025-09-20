@@ -49,7 +49,7 @@ A comprehensive React/TypeScript web application for managing office pantry oper
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/office-pantry-management.git
+git clone https://github.com/kanakasudheer/Office-Pantry-Management-System-
 cd office-pantry-management
 ```
 
@@ -145,24 +145,6 @@ The system uses Google Gemini API for AI chatbot functionality. Get your API key
 - **Error Handling**: Graceful error management
 - **Data Persistence**: Secure local storage
 
-## 🚀 Deployment
-
-### Build for Production
-```bash
-npm run build
-```
-
-### Preview Production Build
-```bash
-npm run preview
-```
-
-### Deploy to Vercel/Netlify
-1. Connect your GitHub repository
-2. Set build command: `npm run build`
-3. Set output directory: `dist`
-4. Add environment variables
-
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -171,9 +153,7 @@ npm run preview
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
