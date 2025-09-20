@@ -162,10 +162,4 @@ The system uses Google Gemini API for AI chatbot functionality. Get your API key
 - **Lucide** for icons
 - **Tailwind CSS** for styling
 
-## 📞 Support
 
-For support, email support@yourcompany.com or create an issue on GitHub.
-
----
-
-**Made with ❤️ for efficient office pantry management**
