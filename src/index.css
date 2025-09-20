@@ -1,0 +1,435 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Office Pantry Management Design System - Colorful Black & White with Animations */
+
+@layer base {
+  :root {
+    /* Background & Surface Colors - Black & White Base */
+    --background: 0 0% 8%;      /* Rich black */
+    --foreground: 0 0% 98%;     /* Pure white */
+    --surface: 0 0% 12%;        /* Dark surface */
+    
+    /* Card System */
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 98%;
+    
+    /* Vibrant Primary - Electric Purple */
+    --primary: 280 100% 60%;    /* Electric purple */
+    --primary-light: 285 100% 70%;  
+    --primary-dark: 275 100% 50%;   
+    --primary-foreground: 0 0% 98%;
+    
+    /* Neon Cyan - Secondary */
+    --secondary: 180 100% 50%;   /* Neon cyan */
+    --secondary-dark: 175 100% 40%; 
+    --secondary-foreground: 0 0% 8%;
+    
+    /* Success Neon Green */
+    --success: 120 100% 50%;     /* Neon green */
+    --success-light: 125 100% 60%; 
+    --success-foreground: 0 0% 8%;
+    
+    /* Muted & Text Colors */
+    --muted: 0 0% 25%;       
+    --muted-foreground: 0 0% 70%; 
+    --text-light: 0 0% 60%;   
+    
+    /* Interactive States - Hot Pink */
+    --accent: 320 100% 60%;      /* Hot pink */
+    --accent-foreground: 0 0% 98%;
+    
+    /* Utility Colors */
+    --destructive: 0 100% 60%;   /* Bright red */
+    --destructive-foreground: 0 0% 98%;
+    --warning: 45 100% 50%;      /* Electric yellow */
+    
+    /* Borders & Inputs */
+    --border: 0 0% 30%;      
+    --input: 0 0% 20%;
+    --ring: 280 100% 60%;        /* Primary purple */
+    
+    /* Enhanced Shadows with Glow */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+    --shadow: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -2px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 20px 25px -5px hsl(0 0% 0% / 0.5), 0 8px 10px -6px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+    --shadow-neon: 0 0 30px hsl(var(--accent) / 0.4);
+    
+    /* Animated Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(280 100% 60%), hsl(320 100% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(120 100% 50%), hsl(180 100% 50%));
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 15%), hsl(0 0% 20%));
+    --gradient-rainbow: linear-gradient(45deg, hsl(280 100% 60%), hsl(320 100% 60%), hsl(180 100% 50%), hsl(120 100% 50%));
+    --gradient-animated: linear-gradient(-45deg, hsl(280 100% 60%), hsl(320 100% 60%), hsl(180 100% 50%), hsl(120 100% 50%));
+    
+    /* Spacing & Layout */
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-sm: 0.5rem;
+    
+    /* Popover Colors */
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Dashboard Cards with Neon Glow */
+  .pantry-card {
+    @apply bg-card rounded-lg p-6 shadow-lg border border-border transition-all duration-300 hover:animate-pulse;
+    background: var(--gradient-surface);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .stat-card {
+    @apply pantry-card text-center transition-all duration-300 hover:shadow-neon hover:-translate-y-2 hover:scale-105;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .stat-card:hover {
+    box-shadow: var(--shadow-neon);
+  }
+
+  /* Navigation Styles */
+  .nav-bottom {
+    @apply fixed bottom-0 left-0 right-0 bg-card border-t border-border py-2 px-4;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center justify-center p-3 rounded-lg transition-all duration-200;
+  }
+
+  .nav-item.active {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .nav-item:not(.active) {
+    @apply text-muted-foreground hover:text-foreground hover:bg-muted;
+  }
+
+  /* Form Styles */
+  .form-card {
+    @apply pantry-card space-y-6;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-dark text-secondary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .btn-success {
+    @apply bg-success hover:bg-success-light text-success-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  /* Role Selection Buttons with Rainbow Effect */
+  .role-button {
+    @apply w-full p-8 rounded-xl border-2 border-border bg-card hover:border-primary transition-all duration-500;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .role-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-rainbow);
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: -1;
+  }
+
+  .role-button:hover::before {
+    left: 0;
+    opacity: 0.1;
+  }
+
+  .role-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-neon);
+  }
+
+  /* Input Styles */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-ring focus:ring-2 focus:ring-ring/20 transition-all duration-200;
+  }
+
+  /* Table Styles */
+  .data-table {
+    @apply w-full bg-card rounded-lg overflow-hidden shadow-lg;
+  }
+
+  .table-header {
+    @apply bg-muted text-muted-foreground font-medium text-sm uppercase tracking-wider;
+  }
+
+  .table-row {
+    @apply border-b border-border hover:bg-muted/50 transition-colors duration-150;
+  }
+
+  /* Enhanced Animation Classes */
+  .fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .slide-up {
+    animation: slideUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .scale-in {
+    animation: scaleIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+  
+  .bounce-in {
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+  
+  .rotate-in {
+    animation: rotateIn 0.6s ease-out forwards;
+  }
+  
+  .glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+  
+  .rainbow-border {
+    animation: rainbowBorder 3s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 2s ease-in-out infinite;
+  }
+  
+  .text-gradient-rainbow {
+    background: var(--gradient-rainbow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 300% 300%;
+    animation: rainbowText 3s ease infinite;
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .bg-gradient-rainbow {
+    background: var(--gradient-rainbow);
+    background-size: 300% 300%;
+    animation: gradientShift 4s ease infinite;
+  }
+  
+  .bg-gradient-animated {
+    background: var(--gradient-animated);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+  }
+
+  .shadow-custom {
+    box-shadow: var(--shadow);
+  }
+
+  .shadow-custom-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+}
+
+/* Enhanced Keyframes with Colorful Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px) scale(0.95); 
+    filter: blur(5px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+    filter: blur(0);
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(50px) rotateX(10deg); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) rotateX(0deg); 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.8) rotate(-5deg); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) rotate(0deg); 
+  }
+}
+
+@keyframes bounceIn {
+  0% { 
+    opacity: 0;
+    transform: scale(0.3) rotate(-10deg);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.05) rotate(2deg);
+  }
+  70% { 
+    transform: scale(0.98) rotate(-1deg);
+  }
+  100% { 
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes rotateIn {
+  from { 
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+  }
+  to { 
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes rainbowBorder {
+  0% { border-color: hsl(280 100% 60%); }
+  25% { border-color: hsl(320 100% 60%); }
+  50% { border-color: hsl(180 100% 50%); }
+  75% { border-color: hsl(120 100% 50%); }
+  100% { border-color: hsl(280 100% 60%); }
+}
+
+@keyframes textShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes rainbowText {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
